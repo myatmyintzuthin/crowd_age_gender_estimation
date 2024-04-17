@@ -18,6 +18,8 @@ Detail face detector training : [FaceDetecton.md](FaceDetection.md)
 
 ## Environment Setup
 
+Venv
+
 
 
 ## Sample Output
