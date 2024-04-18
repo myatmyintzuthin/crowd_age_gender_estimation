@@ -1,4 +1,4 @@
-# Age and Gender Estimation in Crowd Scenes
+# Age and Gender Estimation in Crowded Scenes
 
 ## Overview
 Most of the age and gender estimation models works on one or two person image. In this repo, age and gender estimation pipeline which is able to estimate in crowded scenes is built.
@@ -50,7 +50,7 @@ $ python pipeline.py --input {image path/video path} --conf config/config.yaml
 | model | type  | weight |
 | :---: | :---: | :----: |
 | Person Detector | YOLOX-m (pretrained) | [yolox_m.pth](https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_m.pth) | 
-| Face Detector | YOLOX-s (custom) | [yolox_s_face.pth]() | 
+| Face Detector | YOLOX-s (custom) | [yolox_s_face.pth](https://github.com/myatmyintzuthin/crowd_age_gender_estimation/releases/tag/face_detection_weight) | 
 | Age&Gender Estimator | Mivolo_d1 (pretrained) | [mivolo_imdb_cross_person_4.22_99.46.pth.tar](https://drive.google.com/file/d/11i8pKctxz3wVkDBlWKvhYIh7kpVFXSZ4/view?usp=drive_link) | 
 
 Detail face detector training : [docs/faceDetectorTraining.md](docs/faceDetectorTraining.md)
