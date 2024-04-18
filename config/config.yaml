@@ -1,0 +1,23 @@
+
+person_detection:
+  model: 'weights/yolox_m_pretrained.pth'
+  exp: 'exps/yolox_m_person.py'
+  device: 0
+  fp16: True
+
+face_detection:
+  model: 'weights/yolox_s_face.pth'
+  exp: 'exps/yolox_s_lagenda_face.py'
+  cls: ['face']
+  device: 0
+  fp16: True
+
+mivolo:
+  model: 'weights/mivolo_imdb_cross_person_4.22_99.46.pth.tar'
+  device: 0
+  fp16: False
+  withperson: True
+  disableface: False
+
+save_path: './pipeline_output'
+

@@ -4,22 +4,51 @@
 Most of the age and gender estimation models works on one or two person image. In this repo, age and gender estimation pipeline which is able to estimate in crowded scenes is built.
 
 Currently, Mivolo (SOTA) model in age and gender estimation is trained on Lagenda Dataset. The model itself is very good at estimating if we can give person and face detected bounding boxes. The original detector used in Mivolo, YOLOv8 is not able to detect person and faces on crowded scenes.
-So, I retrained detector part.
+So, the detector part is modified.
 
 New pipeline structure:
 
-* Person detector (YOLOX-m pretrained)
-* Face detector (YOLOX-s)
-* Age gender estimator (mivolo_d1)
+<img src="assets/pipeline.png" width='460' height='300'/> 
 
-<img src="assets/pipeline_flow.png" width='460' height='256'/> 
-
-Detail face detector training : [FaceDetecton.md](FaceDetection.md)
+## Host System Specification
+* Ubuntu - 22.04
+* Cuda - 11.7
+* Python - 3.10.12
 
 ## Environment Setup
 
-Venv
+Clone the repo:
+```
+$ git clone https://github.com/myatmyintzuthin/crowd_age_gender_estimation.git
+$ cd crowd_age_gender_estimation
+```
+### Install with requirements.txt
+Create python virtual environment:
+```
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
 
+### Install with Docker
+build docker
+```
+$ make docker-build
+```
+run docker
+```
+$ make docker-run
+```
+
+## Model 
+
+| model | type  | weight |
+| :---: | :---: | :----: |
+| Person Detector | YOLOX-m (pretrained) | [yolox_m.pth](https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_m.pth) | 
+| Face Detector | YOLOX-s (custom) | [yolox_s_face.pth]() | 
+| Age&Gender Estimator | Mivolo_d1 (pretrained) | [mivolo_imdb_cross_person_4.22_99.46.pth.tar](https://drive.google.com/file/d/11i8pKctxz3wVkDBlWKvhYIh7kpVFXSZ4/view?usp=drive_link) | 
+
+Detail face detector training : [docs/faceDetectorTraining.md](docs/faceDetectorTraining.md)
 
 
 ## Sample Output

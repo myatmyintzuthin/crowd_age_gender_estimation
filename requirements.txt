@@ -1,0 +1,12 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+rich
+numpy
+scipy
+loguru
+psutil
+tabulate
+omegaconf
+opencv_python
+timm==0.8.13.dev0
+torch==1.13.1+cu117 
+torchvision==0.14.1+cu117 
