@@ -79,6 +79,7 @@ class YOLOPredictor(object):
             img_info["file_name"] = None
 
         height, width = img.shape[:2]
+        
         img_info["height"] = height
         img_info["width"] = width
         img_info["raw_img"] = img

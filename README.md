@@ -40,6 +40,11 @@ run docker
 $ make docker-run
 ```
 
+### Run pipeline
+```
+$ python pipeline.py --input {image path/video path} --conf config/config.yaml
+```
+
 ## Model 
 
 | model | type  | weight |
@@ -56,6 +61,9 @@ Detail face detector training : [docs/faceDetectorTraining.md](docs/faceDetector
 | :---:  | :---: | 
 | <img src="assets/japan1_mivolo.jpg"/> | <img src="assets/japan1_pipeline.png"/>   |
 | <img src="assets/japan4_mivolo.jpg"/> | <img src="assets/japan4_pipeline.png"/>      |
+
+## Video Output
+<img src="assets/tokyo_walk.gif"/>
 
 # References
 

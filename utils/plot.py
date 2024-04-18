@@ -7,11 +7,10 @@
 import cv2
 import torch
 from utils.color import RGBs
-from utils.logger import Logger
 from models.mivolo.structures import PersonAndFaceResult
-logger = Logger().get_instance()
 
-def plot_results(image: cv2.Mat, save_path: str, detected_bboxes: PersonAndFaceResult, image_inf: bool):
+
+def plot_results(image: cv2.Mat, detected_bboxes: PersonAndFaceResult)-> cv2.Mat:
 
         colors_by_ind = {}
         results = detected_bboxes.yolo_results
@@ -41,10 +40,8 @@ def plot_results(image: cv2.Mat, save_path: str, detected_bboxes: PersonAndFaceR
             if gender_scores and gender_score is not None:
                 label += f" ({gender_score:.1f})"
             vis_image = draw_bbox(vis_image, d.xyxy.squeeze(), label, colors_by_ind[bb_ind])
-
-        if image_inf:
-            save_image(vis_image, save_path)
         
+        return vis_image
 
 def draw_bbox(image, bbox, label, color_index):
 
@@ -72,7 +69,3 @@ def draw_bbox(image, bbox, label, color_index):
 
         return image
 
-def save_image(image: cv2.Mat, save_path: str):
-
-    cv2.imwrite(save_path, image)
-    logger.info(f"Visualized image saved in {save_path}")
