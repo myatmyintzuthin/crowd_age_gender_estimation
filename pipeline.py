@@ -20,7 +20,7 @@ from models.mivolo.structures import PersonAndFaceResult
 def get_args():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="assets/test.jpg", type= str ,help="test image/video path", choices=[])
+    parser.add_argument("--input", default="assets/test.jpg", type= str ,help="test image/video path")
     parser.add_argument("--conf", default="config/config.yaml", type= str, help="config file path")
     opt = parser.parse_args()
     return opt
