@@ -92,6 +92,7 @@ Detail face detector training : [docs/faceDetectorTraining.md](docs/faceDetector
 }
 ```
 
+Don't forget to give a star to the repo :3
 
 
 
